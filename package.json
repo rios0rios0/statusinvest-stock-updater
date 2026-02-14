@@ -1,13 +1,13 @@
 {
-	  "name": "statusinvest-stock-updater",
-	  "version": "1.0.0",
-	  "description": "Chrome extension to update stock prices in StatusInvest",
-	  "main": "background.js",
-	  "scripts": {
-	  	  "build": "tsc"
-	  },
-	  "devDependencies": {
-	  	  "@types/chrome": "^0.0.269",
-	  	  "typescript": "^4.0.0"
-	  }
+	"name": "statusinvest-stock-updater",
+	"version": "1.0.0",
+	"description": "Chrome extension to update stock prices in StatusInvest",
+	"main": "background.js",
+	"scripts": {
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"@types/chrome": "^0.0.269",
+		"typescript": "^4.0.0"
+	}
 }
