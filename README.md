@@ -4,6 +4,8 @@
         <img src="https://img.shields.io/github/release/rios0rios0/statusinvest-stock-updater.svg?style=for-the-badge&logo=github" alt="Latest Release"/></a>
     <a href="https://github.com/rios0rios0/statusinvest-stock-updater/blob/main/LICENSE">
         <img src="https://img.shields.io/github/license/rios0rios0/statusinvest-stock-updater.svg?style=for-the-badge&logo=github" alt="License"/></a>
+    <a href="https://github.com/rios0rios0/statusinvest-stock-updater/actions/workflows/default.yaml">
+        <img src="https://img.shields.io/github/actions/workflow/status/rios0rios0/statusinvest-stock-updater/default.yaml?branch=main&style=for-the-badge&logo=github" alt="Build Status"/></a>
 </p>
 
 A Google Chrome extension that adds a new row for each stock in the "Patrimonio" table on the StatusInvest website. The extension fetches the current stock price using the Alpha Vantage API and updates the table accordingly.
