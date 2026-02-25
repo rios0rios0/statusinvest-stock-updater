@@ -68,7 +68,7 @@ const apiKey = 'YOUR_ALPHA_VANTAGE_API_KEY';
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes or improvements.
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
