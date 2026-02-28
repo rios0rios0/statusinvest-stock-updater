@@ -8,7 +8,8 @@ development practices, refer to the **[Development Guide](https://github.com/rio
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) 18+
-- [npm](https://www.npmjs.com/)
+- [Yarn](https://yarnpkg.com/) 1.22+ (used as package manager; `yarn.lock` is present)
+- [Google Chrome](https://www.google.com/chrome/) (for loading and testing the extension)
 
 ## Development Workflow
 
@@ -16,13 +17,17 @@ development practices, refer to the **[Development Guide](https://github.com/rio
 2. Create a branch: `git checkout -b feat/my-change`
 3. Install dependencies:
    ```bash
-   npm install
+   yarn install
    ```
-4. Make your changes
-5. Build and test:
+4. Build the TypeScript source files (compiles `background.ts` and `content.ts` to `dist/`):
    ```bash
-   npm run build
-   npm test
+   yarn build
    ```
-6. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Life-Cycle/Git-Flow)
-7. Open a pull request against `main`
+5. Load the extension in Chrome for testing:
+   - Open `chrome://extensions/`
+   - Enable **Developer mode**
+   - Click **Load unpacked** and select the `dist` directory
+6. Test the extension by navigating to [statusinvest.com.br](https://statusinvest.com.br/) and verifying
+   the "Patrimonio" table updates with stock price data
+7. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Life-Cycle/Git-Flow)
+8. Open a pull request against `main`
