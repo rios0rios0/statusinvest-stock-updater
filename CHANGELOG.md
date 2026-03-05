@@ -22,4 +22,4 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ### Fixed
 
-- fixed CI workflow to use the yarn-based reusable workflow instead of the npm one
+- fixed CI workflow to use the Yarn-based reusable workflow instead of the npm one
