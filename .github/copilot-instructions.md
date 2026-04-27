@@ -8,7 +8,7 @@ This repository contains a **Google Chrome extension** (Manifest V3) that enhanc
 
 ### Bootstrap and Build the Repository
 
-- Install required system dependencies: **Node.js 18+** and **Yarn 1.22+**
+- Install required system dependencies: **Node.js 18+** and **Yarn 4+** (Berry). The `packageManager` field in `package.json` pins the exact version; enable [Corepack](https://nodejs.org/api/corepack.html) (`corepack enable`) to use it automatically.
 - Install project dependencies:
   ```bash
   yarn install
@@ -42,7 +42,8 @@ statusinvest-stock-updater/
 ├── package.json                  # Project metadata and build script
 ├── tsconfig.json                 # TypeScript compiler options
 ├── yarn.lock                     # Locked dependency versions
-├── .gitignore                    # Ignores dist/ and node_modules/
+├── LICENSE                       # MIT license
+├── .gitignore                    # Ignores dist/, node_modules/, and Yarn Berry state files
 ├── CHANGELOG.md                  # Release history
 ├── CONTRIBUTING.md               # Contribution guidelines
 └── README.md                     # Project overview and installation instructions
@@ -61,7 +62,7 @@ statusinvest-stock-updater/
 - **Language**: TypeScript (compiled to ES6 / CommonJS via `tsc`)
 - **Platform**: Chrome Extension — Manifest Version 3
 - **External API**: [Alpha Vantage](https://www.alphavantage.co/) — `GLOBAL_QUOTE` endpoint (requires a free API key)
-- **Package manager**: Yarn (`yarn.lock` present; **always use `yarn`, never `npm`**)
+- **Package manager**: Yarn Berry 4.x (`packageManager` field in `package.json`; `yarn.lock` present; **always use `yarn`, never `npm`**)
 - **Dev dependencies**: `typescript ^4.0.0`, `@types/chrome ^0.0.269`
 
 ## CI/CD Pipeline
