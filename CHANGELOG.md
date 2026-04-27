@@ -16,6 +16,14 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ## [Unreleased]
 
+### Added
+
+- added `CLAUDE.md` with build commands, conventions, and CI guidance for Claude Code sessions
+
+### Changed
+
+- refreshed `.github/copilot-instructions.md` to reflect Yarn Berry 4.x (was documented as Yarn 1.22+)
+
 ## [0.1.0] - 2026-03-12
 
 ### Added
