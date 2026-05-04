@@ -16,6 +16,8 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-05-04
+
 ### Changed
 
 - refreshed `CLAUDE.md` and `.github/copilot-instructions.md` to reference the `yarn-library.yaml` reusable workflow (was `javascript.yaml`)
