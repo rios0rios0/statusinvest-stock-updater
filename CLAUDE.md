@@ -25,4 +25,4 @@ No automated tests exist. Validation is manual: load `dist/` as an unpacked exte
 
 ## CI/CD
 
-The workflow (`.github/workflows/default.yaml`) delegates to `rios0rios0/pipelines/.github/workflows/javascript.yaml@main`. No secrets or environment variables needed.
+The workflow (`.github/workflows/default.yaml`) delegates to `rios0rios0/pipelines/.github/workflows/yarn-library.yaml@main`. No secrets or environment variables needed.

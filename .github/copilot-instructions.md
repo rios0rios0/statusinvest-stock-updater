@@ -70,7 +70,7 @@ statusinvest-stock-updater/
 The GitHub Actions workflow (`.github/workflows/default.yaml`) delegates to the shared reusable pipeline:
 
 ```yaml
-uses: 'rios0rios0/pipelines/.github/workflows/javascript.yaml@main'
+uses: 'rios0rios0/pipelines/.github/workflows/yarn-library.yaml@main'
 ```
 
 It triggers on:
