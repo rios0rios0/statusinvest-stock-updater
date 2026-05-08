@@ -21,6 +21,7 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 ### Changed
 
 - refreshed `CLAUDE.md` and `.github/copilot-instructions.md` to reference the `yarn-library.yaml` reusable workflow (was `javascript.yaml`)
+- synced `manifest.json` version with `package.json` so the Chrome extension reports the same release version users install
 
 ## [0.2.0] - 2026-04-28
 
