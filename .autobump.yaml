@@ -1,0 +1,5 @@
+languages:
+  typescript:
+    version_files:
+      - path: 'manifest.json'
+        patterns: ['(\s*"version":\s*")\d+\.\d+\.\d+(",)']
