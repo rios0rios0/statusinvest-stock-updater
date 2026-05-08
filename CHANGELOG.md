@@ -22,6 +22,8 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 - refreshed `CLAUDE.md` and `.github/copilot-instructions.md` to reference the `yarn-library.yaml` reusable workflow (was `javascript.yaml`)
 - synced `manifest.json` version with `package.json` so the Chrome extension reports the same release version users install
+- added `.autobump.yaml` so future bumps update both `package.json` and `manifest.json` in lockstep
+- added `knip.json` declaring `background.ts` and `content.ts` as Chrome extension entry points and ignoring `@types/chrome`/`tsc` (loaded via `manifest.json` and ambient TypeScript globals, not via imports)
 
 ## [0.2.0] - 2026-04-28
 
