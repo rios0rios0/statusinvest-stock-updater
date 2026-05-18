@@ -36,8 +36,10 @@ statusinvest-stock-updater/
 │   ├── copilot-instructions.md   # This file
 │   └── workflows/
 │       └── default.yaml          # CI/CD pipeline (delegates to rios0rios0/pipelines)
+├── .autobump.yaml                # Auto-bump config (syncs package.json & manifest.json versions)
 ├── background.ts                 # Background service worker: fetches stock prices via Alpha Vantage
 ├── content.ts                    # Content script: detects the table and inserts rows
+├── knip.json                     # Knip config (entry points and ignored dependencies)
 ├── manifest.json                 # Chrome Extension Manifest V3 configuration
 ├── package.json                  # Project metadata and build script
 ├── tsconfig.json                 # TypeScript compiler options
@@ -45,6 +47,7 @@ statusinvest-stock-updater/
 ├── LICENSE                       # MIT license
 ├── .gitignore                    # Ignores dist/, node_modules/, and Yarn Berry state files
 ├── CHANGELOG.md                  # Release history
+├── CLAUDE.md                     # AI assistant guidance (Claude Code)
 ├── CONTRIBUTING.md               # Contribution guidelines
 └── README.md                     # Project overview and installation instructions
 ```
