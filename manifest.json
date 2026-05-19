@@ -1,7 +1,7 @@
 {
 	  "manifest_version": 3,
 	    "name": "StatusInvest Stock Updater",
-	      "version": "0.2.1",
+	      "version": "0.2.2",
 	        "description": "Adds a new row for each stock in the Patrimônio table on StatusInvest.",
 		  "permissions": ["activeTab", "scripting"],
 		    "background": {
