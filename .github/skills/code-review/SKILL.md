@@ -20,7 +20,7 @@ The canonical engineering standards live in the
 repo-tailored index into that guide plus the rules that only apply here. Precedence, highest
 first:
 
-1. This repository's `.github/copilot-instructions.md`, `CLAUDE.md`, and `CONTRIBUTING.md` —
+1. This repository's `.github/copilot-instructions.md`, `AGENTS.md`, and `CONTRIBUTING.md` —
    they describe *this* codebase and its load-bearing invariants.
 2. The **rios0rios0/guide** wiki — the shared standard.
 3. General language idiom.
@@ -80,7 +80,7 @@ them before the generic ones.
 
 ```bash
 yarn install
-yarn build             # output loaded unpacked from dist/
+yarn build             # tsc: emits dist/background.js and dist/content.js only
 ```
 
 ## JavaScript / TypeScript conventions
@@ -114,7 +114,7 @@ and YAML blocks inside Markdown.
 
 ## Tests
 
-There is no automated test suite; verification is manual — load the unpacked extension from `dist/` and check the table on a real StatusInvest page. A pull request that changes parsing or price formatting should extract that logic into a pure function and test it, following [JavaScript & TypeScript Testing](https://github.com/rios0rios0/guide/wiki/JavaScript-Testing).
+There is no automated test suite; a clean `yarn build` is the baseline check, and behaviour is verified manually on a real StatusInvest page. `dist/` is not loadable unpacked as-is: it lacks `manifest.json`, and the `popup.html` and `images/icon*.png` the manifest references are not in the repository. A pull request that changes parsing or price formatting should extract that logic into a pure function and test it, following [JavaScript & TypeScript Testing](https://github.com/rios0rios0/guide/wiki/JavaScript-Testing).
 
 ## Documentation and change control
 
@@ -134,7 +134,7 @@ hand.
 - Fragment bodies start with a lowercase verb in simple past tense, capitalise proper nouns
   (GitHub, Go, Docker), and wrap code identifiers and versions in backticks.
 - `README.md` is updated whenever usage, setup, configuration, or architecture changes;
-  `.github/copilot-instructions.md` and `CLAUDE.md` whenever the workflow, commands, or
+  `.github/copilot-instructions.md` and `AGENTS.md` whenever the workflow, commands, or
   structure changes. Documentation and code ship in one commit.
 
 ## Git Flow and pull-request hygiene
@@ -198,7 +198,7 @@ A review that raises noise gets ignored. Do not report these:
 ### Change-control checklist
 - [ ] Changelog entry present for every behavioural change
 - [ ] `README.md` updated if usage, setup, or architecture changed
-- [ ] `.github/copilot-instructions.md` and `CLAUDE.md` updated if the workflow, commands, or structure changed
+- [ ] `.github/copilot-instructions.md` and `AGENTS.md` updated if the workflow, commands, or structure changed
 - [ ] Commit messages follow `type(SCOPE): message` in simple past tense
 - [ ] Breaking changes flagged in the commit footer, the changelog, and the PR description
 
