@@ -8,7 +8,7 @@ development practices, refer to the **[Development Guide](https://github.com/rio
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) 18+
-- [Yarn](https://yarnpkg.com/) 1.22+ (used as package manager; `yarn.lock` is present)
+- [Yarn](https://yarnpkg.com/) 4.x (Berry, pinned via the `packageManager` field in `package.json`; run `corepack enable`)
 - [Google Chrome](https://www.google.com/chrome/) (for loading and testing the extension)
 
 ## Development Workflow
@@ -27,7 +27,10 @@ development practices, refer to the **[Development Guide](https://github.com/rio
    - Open `chrome://extensions/`
    - Enable **Developer mode**
    - Click **Load unpacked** and select the `dist` directory
+   - Note: `yarn build` emits only `background.js` and `content.js`; `manifest.json` is not copied into
+     `dist`, and the `popup.html` and `images/icon*.png` it references are not in the repository, so this
+     step fails until those files are provided
 6. Test the extension by navigating to [statusinvest.com.br](https://statusinvest.com.br/) and verifying
    the "Patrimonio" table updates with stock price data
-7. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Life-Cycle/Git-Flow)
+7. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Git-Flow)
 8. Open a pull request against `main`

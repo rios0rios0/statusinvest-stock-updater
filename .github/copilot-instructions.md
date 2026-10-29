@@ -2,8 +2,6 @@
 
 This repository contains a **Google Chrome extension** (Manifest V3) that enhances the [StatusInvest](https://statusinvest.com.br/) investment website by automatically adding stock rows to the "Patrimônio" table. Each new row displays a stock code and its current price fetched from the [Alpha Vantage API](https://www.alphavantage.co/).
 
-**ALWAYS** reference these instructions first and fall back to search or bash commands only when you encounter unexpected information that does not match the info here.
-
 ## Working Effectively
 
 ### Bootstrap and Build the Repository
@@ -25,7 +23,7 @@ This repository contains a **Google Chrome extension** (Manifest V3) that enhanc
 
 1. Open `chrome://extensions/` in Google Chrome.
 2. Enable **Developer mode** (toggle in the top-right corner).
-3. Click **Load unpacked** and select the `dist/` directory.
+3. Click **Load unpacked** and select the `dist/` directory. Note: `yarn build` emits only `dist/background.js` and `dist/content.js`; `manifest.json` is not copied there, and the `popup.html` and `images/icon*.png` it references are not in the repository, so this step fails until those files are provided.
 4. Navigate to [statusinvest.com.br](https://statusinvest.com.br/) and verify that the "Patrimônio" table is updated with stock price rows.
 
 ## Repository Structure
@@ -34,9 +32,15 @@ This repository contains a **Google Chrome extension** (Manifest V3) that enhanc
 statusinvest-stock-updater/
 ├── .github/
 │   ├── copilot-instructions.md   # This file
+│   ├── skills/
+│   │   └── code-review/SKILL.md  # Repository code-review skill
 │   └── workflows/
+│       ├── claude-mention.yaml   # Claude @-mention responder (needs CLAUDE_CODE_OAUTH_TOKEN)
+│       ├── claude-review.yaml    # Claude PR review (needs CLAUDE_CODE_OAUTH_TOKEN)
 │       └── default.yaml          # CI/CD pipeline (delegates to rios0rios0/pipelines)
+├── .changes/unreleased/          # chlog changelog fragments
 ├── .autobump.yaml                # Auto-bump config (syncs package.json & manifest.json versions)
+├── .gitleaksignore               # Gitleaks suppressions
 ├── background.ts                 # Background service worker: fetches stock prices via Alpha Vantage
 ├── content.ts                    # Content script: detects the table and inserts rows
 ├── knip.json                     # Knip config (entry points and ignored dependencies)
@@ -47,7 +51,8 @@ statusinvest-stock-updater/
 ├── LICENSE                       # MIT license
 ├── .gitignore                    # Ignores dist/, node_modules/, and Yarn Berry state files
 ├── CHANGELOG.md                  # Release history
-├── CLAUDE.md                     # AI assistant guidance (Claude Code)
+├── AGENTS.md                     # Shared AI-agent guidance
+├── CLAUDE.md                     # Imports AGENTS.md for Claude Code
 ├── CONTRIBUTING.md               # Contribution guidelines
 └── README.md                     # Project overview and installation instructions
 ```
@@ -82,7 +87,7 @@ It triggers on:
 - Pull requests targeting `main`
 - Manual dispatch (`workflow_dispatch`)
 
-No additional secrets or environment variables are required for CI.
+`default.yaml` needs no secrets or environment variables. `claude-review.yaml` (every pull request) and `claude-mention.yaml` delegate to reusable workflows in `rios0rios0/pipelines` and require the `CLAUDE_CODE_OAUTH_TOKEN` repository secret.
 
 ## Development Workflow
 
@@ -91,9 +96,9 @@ No additional secrets or environment variables are required for CI.
 3. Install dependencies: `yarn install`
 4. Edit `background.ts` or `content.ts` as needed.
 5. Build: `yarn build`
-6. Load the unpacked extension from `dist/` in Chrome (see [Loading the Extension](#loading-the-extension-in-chrome-manual-testing)).
+6. Load the unpacked extension in Chrome (see [Loading the Extension](#loading-the-extension-in-chrome-manual-testing) for what `dist/` currently lacks).
 7. Test manually on [statusinvest.com.br](https://statusinvest.com.br/).
-8. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Life-Cycle/Git-Flow).
+8. Commit following the [commit conventions](https://github.com/rios0rios0/guide/wiki/Git-Flow).
 9. Open a pull request against `main`.
 
 ## Coding Conventions

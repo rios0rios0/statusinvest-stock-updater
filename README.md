@@ -27,23 +27,25 @@ A Google Chrome extension that adds a new row for each stock in the "Patrimonio"
 
 ## Installation
 
-1. Clone the repository and install dependencies:
+1. Clone the repository and install dependencies with Yarn 4 (pinned via the `packageManager` field; run `corepack enable` first):
 
     ```bash
     git clone https://github.com/rios0rios0/statusinvest-stock-updater.git
     cd statusinvest-stock-updater
-    npm install
+    yarn install
     ```
 
 2. Compile the TypeScript files:
 
     ```bash
-    npm run build
+    yarn build
     ```
 
 3. Open Chrome and go to `chrome://extensions/`.
 4. Enable **Developer mode** in the top right corner.
 5. Click **Load unpacked** and select the `dist` directory from your project.
+
+> **Note:** `yarn build` emits only `dist/background.js` and `dist/content.js`. `manifest.json` is not copied into `dist`, and the `popup.html` and `images/icon*.png` files it references are not in the repository, so step 5 fails until those files are provided.
 
 ## Usage
 

@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI coding agents (Claude Code, Codex, Cursor, GitHub Copilot) when working with code in this repository.
 
 ## Project
 
@@ -13,7 +13,7 @@ yarn install    # Install dependencies (uses Yarn Berry 4.x via packageManager f
 yarn build      # Compile TypeScript to dist/ via tsc
 ```
 
-No automated tests exist. Validation is manual: load `dist/` as an unpacked extension in Chrome.
+No automated tests exist; a clean `yarn build` is the baseline check. `yarn build` emits only `dist/background.js` and `dist/content.js` — `manifest.json` stays at the root, and the `popup.html` and `images/icon*.png` it references are not in the repository — so `dist/` cannot be loaded unpacked in Chrome as-is.
 
 ## Conventions
 
@@ -21,11 +21,8 @@ No automated tests exist. Validation is manual: load `dist/` as an unpacked exte
 - TypeScript strict mode is enabled; all code must compile without errors.
 - Never commit a real Alpha Vantage API key — the placeholder `YOUR_ALPHA_VANTAGE_API_KEY` must remain.
 - `dist/` is gitignored; never commit compiled output.
-- Commit conventions follow the [Development Guide](https://github.com/rios0rios0/guide/wiki/Life-Cycle/Git-Flow).
-
-## CI/CD
-
-The workflow (`.github/workflows/default.yaml`) delegates to `rios0rios0/pipelines/.github/workflows/yarn-library.yaml@main`. No secrets or environment variables needed.
+- `.autobump.yaml` keeps the `manifest.json` version in sync with `package.json`; never bump either by hand.
+- Commit conventions follow the [Development Guide](https://github.com/rios0rios0/guide/wiki/Git-Flow).
 
 <!-- chlog:start -->
 ## Changelog (chlog) — MANDATORY
