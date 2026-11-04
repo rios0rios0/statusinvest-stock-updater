@@ -22,6 +22,12 @@ Exceptions are acceptable depending on the circumstances (critical bug fixes tha
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-11-04
+
+### Changed
+
+- moved the agent instructions from `CLAUDE.md` to `AGENTS.md`, keeping a `CLAUDE.md` that imports it, and refreshed `AGENTS.md`, `.github/copilot-instructions.md`, `.github/skills/code-review/SKILL.md`, `README.md`, and `CONTRIBUTING.md` to note that `dist/` cannot be loaded unpacked as-is, point at `AGENTS.md` instead of `CLAUDE.md`, list the Claude workflows and their `CLAUDE_CODE_OAUTH_TOKEN` secret, require Yarn 4 instead of npm or Yarn 1, and fix the Git-Flow wiki link
+
 ## [0.4.1] - 2026-09-08
 
 ### Changed
